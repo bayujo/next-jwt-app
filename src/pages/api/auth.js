@@ -2,7 +2,7 @@ import { compare, hash } from "bcrypt";
 import { sign } from "jsonwebtoken";
 import prisma from "../../../lib/prisma";
 
-const JWT_SECRET = "your-secret-key"
+const JWT_SECRET = process.env.JWT_SECRET;
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
