@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { Input, Spacer, Button } from "@nextui-org/react";
 
 const CreateBookPage = () => {
     const router = useRouter();
@@ -35,18 +36,44 @@ const CreateBookPage = () => {
             <h1>Create Book</h1>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Title</label>
-                    <input type="text" name="title" value={formData.title} onChange={handleChange}/>                    
+                    <Input
+                        type="text"
+                        required
+                        name="title"
+                        value={formData.title}
+                        onChange={handleChange}
+                        labelPlaceholder="Title"
+                        underlined
+                    />
                 </div>
+                <Spacer y={2} />
                 <div>
-                    <label>Author</label>
-                    <input type="text" name="author" value={formData.author} onChange={handleChange}/>                    
+                    <Input
+                        type="text"
+                        required
+                        name="author"
+                        value={formData.author}
+                        onChange={handleChange}
+                        labelPlaceholder="Author"
+                        underlined
+                    />
                 </div>
+                <Spacer y={2} />
                 <div>
-                    <label>Page</label>
-                    <input type="number" name="page" value={formData.page} onChange={handleChange}/>                    
+                    <Input
+                        type="number"
+                        required
+                        name="page"
+                        value={formData.page}
+                        onChange={handleChange}
+                        labelPlaceholder="Page"
+                        underlined
+                    />
                 </div>
-                <button type="submit">Create</button>
+                <Spacer y={2} />
+                <Button type="submit" auto>
+                    Create
+                </Button>
             </form>
         </div>
     )

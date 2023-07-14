@@ -22,7 +22,7 @@ const LoginForm = () => {
 
             window.location.href = "/book";
         } catch (error) {
-            setMessage(errror.response.data.message);
+            setMessage(error.response.data.message);
         }
     };
 
